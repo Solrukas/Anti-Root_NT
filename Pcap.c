@@ -69,8 +69,8 @@ void packetHandler(u_char *udata, const struct pcap_pkthdr *pkt, const u_char *p
 	
 	printf("Src IP : %s\n", inet_ntoa(iphd->ip_src));
 	printf("Dst IP : %s\n", inet_ntoa(iphd->ip_dst));
-    printf("Src Port : %d\n" , ntohs(tcph->source));
-    printf("Dst Port : %d\n" , ntohs(tcph->dest));
+    	printf("Src Port : %d\n" , ntohs(tcph->source));
+    	printf("Dst Port : %d\n" , ntohs(tcph->dest));
 	printf("Protocol : ");
 	if (ntohs(ethp->ether_type) == ETHERTYPE_IP) {
 		printf("(IP)");
