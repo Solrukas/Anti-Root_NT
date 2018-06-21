@@ -75,15 +75,13 @@ void packetHandler(u_char *udata, const struct pcap_pkthdr *pkt, const u_char *p
 	if (ntohs(ethp->ether_type) == ETHERTYPE_IP) {
 		printf("(IP)");
 	} 
-	if (iphd->ip_p == IPPROTO_TCP)
-    {
+	if (iphd->ip_p == IPPROTO_TCP) {
 		printf("(TCP Protocol)");
     }
 	if (ether_type == ETHERTYPE_IPV6) {
 		printf("(IPV6)");
 	}
-	if (ether_type == ETHERTYPE_ARP)
-	{
+	if (ether_type == ETHERTYPE_ARP) {
 		printf("(ARP)");
 	}
 	printf("\n");
