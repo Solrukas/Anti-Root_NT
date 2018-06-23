@@ -33,13 +33,13 @@ int main(int argc, char **argv) {
 	printf("Interfaces : %s\n", interfaces);
 	
 	net_addr.s_addr = netp;
-    network = inet_ntoa(net_addr);
-    printf("Network : %s\n", network);
-    mask_addr.s_addr = maskp;
-    mask = inet_ntoa(mask_addr);
-    printf("Mask : %s\n", mask);
+    	network = inet_ntoa(net_addr);
+   	printf("Network : %s\n", network);
+   	mask_addr.s_addr = maskp;
+    	mask = inet_ntoa(mask_addr);
+    	printf("Mask : %s\n", mask);
     
-    pcap_desc = pcap_open_live(interfaces, BUFSIZ, 0, -1, errbuf);
+    	pcap_desc = pcap_open_live(interfaces, BUFSIZ, 0, -1, errbuf);
 
 	pcap_loop(pcap_desc, 0, packetHandler, NULL);
 	printf("end");
