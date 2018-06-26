@@ -33,13 +33,13 @@ int main(int argc, char **argv) {
 	printf("Interfaces : %s\n", interfaces);
 	
 	net_addr.s_addr = netp;
-    network = inet_ntoa(net_addr);
-    printf("Network : %s\n", network);
-    mask_addr.s_addr = maskp;
-    mask = inet_ntoa(mask_addr);
-    printf("Mask : %s\n", mask);
+    	network = inet_ntoa(net_addr);
+    	printf("Network : %s\n", network);
+    	mask_addr.s_addr = maskp;
+    	mask = inet_ntoa(mask_addr);
+   	printf("Mask : %s\n", mask);
     
-    pcap_desc = pcap_open_live(interfaces, BUFSIZ, 0, -1, errbuf);
+   	pcap_desc = pcap_open_live(interfaces, BUFSIZ, 0, -1, errbuf);
 
 	pcap_loop(pcap_desc, 0, packetHandler, NULL);
 	printf("end");
@@ -80,7 +80,7 @@ void packetHandler(u_char *udata, const struct pcap_pkthdr *pkt, const u_char *p
 		printf("Dst IP : %s\n", inet_ntoa(iphd->ip_dst));
 		
 		if (iphd->ip_p == IPPROTO_TCP) {
-    		struct tcphdr *tcph = (struct tcphdr *)(packet + sizeof(struct ether_header) + sizeof(struct ip));
+    			struct tcphdr *tcph = (struct tcphdr *)(packet + sizeof(struct ether_header) + sizeof(struct ip));
 			printf("(TCP Protocol)\n");
 			printf("Src Port : %d\n" , ntohs(tcph->source));
  			printf("Dst Port : %d\n" , ntohs(tcph->dest));
