@@ -94,16 +94,16 @@ void packetHandler(u_char *udata, const struct pcap_pkthdr *pkt, const u_char *p
   		
   	}
 	if (et_type == ETHERTYPE_IPV6) {
-		printf("(IPV6)");
+		printf("(IPV6)\n");
 	}
 	if (et_type == ETHERTYPE_ARP) {
-		printf("(ARP)");
+		printf("(ARP)\n");
 	}
 	if (et_type == ETHERTYPE_VLAN) {
-		printf("(VLAN)");
+		printf("(VLAN)\n");
 	}
 	if(et_type == ETHERTYPE_LOOPBACK) {
-		printf("(LOOPBACK)");
+		printf("(LOOPBACK)\n");
 	}
 	printf("============================================\n");
 }
